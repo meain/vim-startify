@@ -16,7 +16,7 @@ syntax sync fromstart
 execute 'syntax match StartifyBracket /.*\%'. (len(s:padding_left) + 6) .'c/ contains=
       \ StartifyNumber,
       \ StartifySelect'
-syntax match StartifySpecial /\V<empty buffer>\|<quit>/
+syntax match StartifySpecial /\V<empty buffer>\|<fuzzy find>\|<quit>/
 syntax match StartifyNumber  /^\s*\[\zs[^BSVT]\{-}\ze\]/
 syntax match StartifySelect  /^\s*\[\zs[BSVT]\{-}\ze\]/
 syntax match StartifyVar     /\$[^\/]\+/

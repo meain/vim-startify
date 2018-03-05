@@ -98,9 +98,11 @@ function! startify#insane_in_the_membrane(on_vimenter) abort
         \ }
 
   if s:show_special
-    call append('$', [s:padding_left .'[e]  <empty buffer>', ''])
+    call append('$', [s:padding_left .'[e]  <empty buffer>'])
+    call append('$', [s:padding_left .'[f]  <fuzzy find>', ''])
   endif
-  call s:register(line('$')-1, 'e', 'special', 'enew', '')
+  call s:register(line('$')-2, 'e', 'special', 'enew', '')
+  call s:register(line('$')-1, 'f', 'special', 'FZF', '')
 
   let b:startify.entry_number = 0
   if filereadable('Session.vim')
